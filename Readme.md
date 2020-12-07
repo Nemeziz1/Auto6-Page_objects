@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/07kb3ep7idnrab44?svg=true)](https://ci.appveyor.com/project/Nemeziz1/auto6-page-objects)
