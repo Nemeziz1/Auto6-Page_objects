@@ -19,7 +19,11 @@ public class DashboardPage2 {
     }
 
     public DashboardPage validVerify1(DataHelper.FirstTransferData firstTransferData) {
+        codeFieldValue.sendKeys(Keys.chord(Keys.CONTROL,"a"));
+        codeFieldValue.sendKeys(Keys.BACK_SPACE);
         codeFieldValue.setValue(firstTransferData.getFirstTransferValue());
+        codeFieldFrom.sendKeys(Keys.chord(Keys.CONTROL,"a"));
+        codeFieldFrom.sendKeys(Keys.DELETE);
         codeFieldFrom.setValue(firstTransferData.getSecondCardNumber());
         codeButton.click();
         return new DashboardPage();

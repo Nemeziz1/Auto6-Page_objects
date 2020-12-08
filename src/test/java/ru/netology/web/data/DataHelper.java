@@ -3,8 +3,12 @@ package ru.netology.web.data;
 import lombok.Value;
 import ru.netology.web.page.DashboardPage;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class DataHelper {
-    private DataHelper() {}
+    private DataHelper() {
+    }
 
     @Value
     public static class AuthInfo {
@@ -36,7 +40,10 @@ public class DataHelper {
     }
 
     public static FirstTransferData getFirstTransferData() {
-        return new FirstTransferData("5559000000000002", "10000");
+        int maxValue = 10001;
+        Random random = new Random();
+        int transferValue = random.nextInt(maxValue);
+        return new FirstTransferData("5559000000000002", "5000");
     }
 
     @Value
@@ -46,6 +53,10 @@ public class DataHelper {
     }
 
     public static SecondTransferData getSecondTransferData() {
-        return new SecondTransferData("5559000000000001", "10000");
+        int maxValue = 10001;
+        Random random = new Random();
+        int transferValue = random.nextInt(maxValue);
+        return new SecondTransferData("5559000000000001", "5000");
     }
 }
+
