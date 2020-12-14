@@ -3,7 +3,6 @@ package ru.netology.web.page;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
-import ru.netology.web.data.DataHelper;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -38,13 +37,13 @@ public class DashboardPage {
         return Integer.parseInt(value);
     }
 
-    public DashboardPage2 validToDashBoard2Account1() {
+    public TransferPage validToTransferAccount1() {
         verifyButtonAccount1.click();
-        return new DashboardPage2();
+        return new TransferPage();
     }
 
-    public DashboardPage2 validToDashBoard2Account2() {
+    public TransferPage validToTransferAccount2() {
         verifyButtonAccount2.click();
-        return new DashboardPage2();
+        return new TransferPage();
     }
 }

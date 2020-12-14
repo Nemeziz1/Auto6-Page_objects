@@ -1,5 +1,6 @@
 package ru.netology.web.data;
 
+import lombok.AllArgsConstructor;
 import lombok.Value;
 import ru.netology.web.page.DashboardPage;
 
@@ -34,29 +35,28 @@ public class DataHelper {
     }
 
     @Value
-    public static class FirstTransferData {
-        private String secondCardNumber;
-        private String firstTransferValue;
+    @AllArgsConstructor
+    public static class TransferInfo {
+        private String cardNumber;
+        private String startBalance;
     }
 
-    public static FirstTransferData getFirstTransferData() {
-        int maxValue = 10001;
-        Random random = new Random();
-        int transferValue = random.nextInt(maxValue);
-        return new FirstTransferData("5559000000000002", "5000");
+    public static TransferInfo getFirstTransferData() {
+        return new TransferInfo("5559000000000001", "10000");
     }
 
-    @Value
-    public static class SecondTransferData {
-        private String firstCardNumber;
-        private String secondTransferValue;
+    public static TransferInfo getSecondTransferData() {
+        return new TransferInfo("5559000000000002", "10000");
     }
 
-    public static SecondTransferData getSecondTransferData() {
-        int maxValue = 10001;
-        Random random = new Random();
-        int transferValue = random.nextInt(maxValue);
-        return new SecondTransferData("5559000000000001", "5000");
+    public static int getBalanceAfterTransfer(int balanceBefore, int value) {
+        int balanceAfter = balanceBefore - value;
+        return balanceAfter;
+    }
+
+    public static int getBalanceAfterGet(int balanceBefore, int value) {
+        int balanceAfter = balanceBefore + value;
+        return balanceAfter;
     }
 }
 
